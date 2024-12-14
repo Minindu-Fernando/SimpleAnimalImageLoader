@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal and Food Viewer</title>
+</head>
+<body>
+    <h1>Animal and Food Viewer</h1>
+    <input type="text" id="animalName" placeholder="Enter animal name">
+    <button id="showButton" onclick="showImages()">Show</button>
+
+    <script>
+        function showImages() {
+            const animalName = document.getElementById('animalName').value.trim();
+            if (!animalName) {
+                alert('Please enter an animal name.');
+                return;
+            }
+            // Redirect to the display page with the animal name as a query parameter
+            window.location.href = `/display?animal=${encodeURIComponent(animalName)}`;
+        }
+    </script>
+</body>
+</html>
